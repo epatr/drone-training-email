@@ -1,0 +1,70 @@
+@import 'settings';
+@import 'foundation-emails';
+
+// Fix dumb Foundation defaults
+ul {
+    margin-top: 0;
+    padding-left: 20px;
+}
+p {
+    margin-bottom: 14px;
+    &.small {
+        font-size: 10px;
+    }
+}
+td {
+    word-wrap: unset;
+    hyphens: unset;
+    -moz-hyphens: unset;
+}
+
+// Styling the inverted portion of the email
+.bg-dark {
+    background: $primary-color;
+    h1, h2, h3, h4 {
+        color: $light-gray;
+        margin-bottom: 0;
+    }
+    p, ul {
+        color: $light-gray;
+    }
+    h1, h2, h3, h4 {
+        font-weight: 300;
+    }
+
+    // Add a border to the listing of the dates
+    .month {
+        border-right: 1px solid $light-gray
+    }
+    // I guess Foundation for Emails isn't mobile-first...
+    @media only screen and (max-width: $global-breakpoint) { 
+        .month { border-right: none; }
+    }
+
+    // Add the little bottom border for headers
+    table.header {
+        border-bottom: 1px solid $light-gray;
+    }
+}
+
+.callout {
+
+    .callout-dark {
+        background-color: $primary-color;
+        border: none;
+        color: $light-gray;
+        .lead {
+            margin-bottom: 0;
+            color: $light-gray;
+        }
+    }
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.text-warning {
+    color: $warning-color;
+    font-weight: bold;
+}
